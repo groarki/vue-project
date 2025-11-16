@@ -6,20 +6,19 @@ import IButton from '../components/IButton/IButton.vue'
 <template>
   <main class="bg-white flex justify-center items-center h-screen">
     <div class="w-4xl rounded-4xl flex h-[642px] overflow-hidden shadow-2xl">
-      <section class="flex-1 pt-30 pb-5 flex-col flex justify-between items-center bg-primary">
-        <div class="flex items-center w-80">
+      <section class="flex-1 pt-45 pb-5 flex-col flex items-center justify-center bg-primary">
+        <div class="flex items-center justify-center w-[350px]">
           <div class="text-white text-center">
-            <img class="inline mb-6" src="../assets/img/pin.svg" alt="" />
+            <img class="inline mb-6" width="50" height="50" src="../assets/img/pin.svg" alt="" />
             <h1 class="font-bold text-2xl mb-3">IT traveler</h1>
-            <p class="leading-5 mb-6 text-xs">
+            <p class="leading-4 mb-6 text-xs tracking-tighter">
               Простий і зручний веб додаток, який дозволить тобі відмічати твої улюблені місця, а
               також ті, в яких би ти дуже хотів побувати. Тож не зволікай і спробуй сам.
             </p>
             <IButton></IButton>
           </div>
         </div>
-
-        <div class="inline-flex justify-center items-center gap-2">
+        <div class="inline-flex mt-auto gap-2">
           <p class="justify-center text-white/80 text-xs font-normal font-['Inter'] leading-5">
             У вас ще немає аккаунту?
           </p>
