@@ -4,6 +4,7 @@
 
 The project follows the design [mockup](https://www.figma.com/design/iKGFonhDEQiTWjSf4pa3P6/IT-traveler?node-id=0-1&p=f&t=4McNTyIpR9PLr9Pb-0)
 
+Deployed version on Vercel: [link](https://vue-project-weld-delta.vercel.app)
 ## Project Description
 
 IT Travels allows users to easily mark their favorite places on a map and save them in one place.  
