@@ -1,0 +1,25 @@
+/* color palette from <https://github.com/vuejs/theme> */
+@theme {
+  --color-primary: #f3743d;
+  --color-peach: #ffa279;
+  --color-gray: #2c2c2c66;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  transition:
+    color 0.5s,
+    background-color 0.5s;
+  line-height: 1.6;
+  font-family: Inter, sans-serif;
+  font-size: 15px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
