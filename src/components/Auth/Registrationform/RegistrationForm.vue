@@ -15,9 +15,21 @@ const userData = reactive({
 
 <template>
   <FormContainer @submit.prevent="emit('submit', toRaw(userData))">
-    <IIinput label="Повне ім'я" placeholder="Ратушняк Ілона" type="text" v-model="userData.name" />
-    <IIinput label="E-mail" placeholder="email@gmail.com" type="email" v-model="userData.email" />
+    <IIinput
+      class="mb-4"
+      label="Повне ім'я"
+      placeholder="Ратушняк Ілона"
+      type="text"
+      v-model="userData.name"
+    />
+    <IIinput
+      class="mb-4"
+      label="E-mail"
+      placeholder="email@gmail.com"
+      type="email"
+      v-model="userData.email"
+    />
     <IIinput label="Пароль" placeholder="********" type="password" v-model="userData.password" />
-    <CommonButton class="mt-10" type="submit">Створити акаунт</CommonButton>
+    <CommonButton class="mt-7" type="submit">Створити акаунт</CommonButton>
   </FormContainer>
 </template>
