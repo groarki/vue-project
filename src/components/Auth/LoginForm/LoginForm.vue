@@ -1,13 +1,12 @@
 <script setup>
-import CommonButton from '@/components/CommonButton/CommonButton.vue'
-import { reactive, toRaw } from 'vue'
 import IIinput from '@/components/IInput/IIinput.vue'
 import FormContainer from '../FormContainer/FormContainer.vue'
+import { reactive, toRaw } from 'vue'
+import CommonButton from '@/components/CommonButton/CommonButton.vue'
 
 const emit = defineEmits(['submit'])
 
 const userData = reactive({
-  name: '',
   email: '',
   password: '',
 })
@@ -15,9 +14,8 @@ const userData = reactive({
 
 <template>
   <FormContainer @submit.prevent="emit('submit', toRaw(userData))">
-    <IIinput label="Повне ім'я" placeholder="Ратушняк Ілона" type="text" v-model="userData.name" />
     <IIinput label="E-mail" placeholder="email@gmail.com" type="email" v-model="userData.email" />
     <IIinput label="Пароль" placeholder="********" type="password" v-model="userData.password" />
-    <CommonButton class="mt-10" type="submit">Створити акаунт</CommonButton>
+    <CommonButton class="mt-10" type="submit">Увійти </CommonButton>
   </FormContainer>
 </template>
