@@ -1,3 +1,5 @@
+<script setup lang="ts"></script>
+
 <template>
   <div class="w-[1000px] rounded-4xl flex h-[642px] overflow-hidden shadow-2xl">
     <section class="flex-1 flex items-center justify-center bg-primary">

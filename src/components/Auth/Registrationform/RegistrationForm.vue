@@ -1,8 +1,8 @@
 <script setup>
-import CommonButton from '@/components/CommonButton/CommonButton.vue'
 import { reactive, toRaw } from 'vue'
 import IIinput from '@/components/IInput/IIinput.vue'
 import FormContainer from '../FormContainer/FormContainer.vue'
+import IButton from '@/components/IButton/IButton.vue'
 
 const emit = defineEmits(['submit'])
 
@@ -30,6 +30,6 @@ const userData = reactive({
       v-model="userData.email"
     />
     <IIinput label="Пароль" placeholder="********" type="password" v-model="userData.password" />
-    <CommonButton class="mt-7" type="submit">Створити акаунт</CommonButton>
+    <IButton class="mt-7 w-full" type="submit" variant="gradient">Створити акаунт</IButton>
   </FormContainer>
 </template>

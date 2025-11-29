@@ -2,7 +2,7 @@
 import IIinput from '@/components/IInput/IIinput.vue'
 import FormContainer from '../FormContainer/FormContainer.vue'
 import { reactive, toRaw } from 'vue'
-import CommonButton from '@/components/CommonButton/CommonButton.vue'
+import IButton from '@/components/IButton/IButton.vue'
 
 const emit = defineEmits(['submit'])
 
@@ -21,7 +21,7 @@ const userData = reactive({
       type="email"
       v-model="userData.email"
     />
-    <IIinput label="Пароль" placeholder="********" type="password" v-model="userData.password" />
-    <CommonButton class="mt-7" type="submit">Увійти </CommonButton>
+    <IIinput label="Пароль" placeholder="**********" type="password" v-model="userData.password" />
+    <IButton class="mt-7 w-full" variant="gradient" type="submit">Увійти </IButton>
   </FormContainer>
 </template>

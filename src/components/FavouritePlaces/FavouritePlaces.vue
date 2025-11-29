@@ -1,5 +1,5 @@
 <script setup>
-import CommonButton from '../CommonButton/CommonButton.vue'
+import IButton from '../IButton/IButton.vue'
 import MarkerComponent from '../MarkerComponent/MarkerComponent.vue'
 </script>
 
@@ -9,6 +9,6 @@ import MarkerComponent from '../MarkerComponent/MarkerComponent.vue'
     <div class="flex flex-col gap-6 mb-11">
       <MarkerComponent :key="m" v-for="m in 4" />
     </div>
-    <CommonButton> Додати маркер </CommonButton>
+    <IButton variant="gradient"> Додати маркер </IButton>
   </div>
 </template>
