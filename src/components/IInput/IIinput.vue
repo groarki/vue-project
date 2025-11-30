@@ -20,7 +20,7 @@ const isTextarea = computed(() => {
 })
 
 const baseStyles =
-  'focus:outline-primary rounded-lg border border-[#2b2b2b]/10 w-full p-3 text-[13px] leading-5 tracking-tight'
+  'focus:outline-primary rounded-sm border border-[#2b2b2b]/10 w-full p-3 text-xs leading-5 tracking-tight'
 
 const inputStyles = computed(() => {
   return isTextarea.value ? baseStyles + ' resize-none' : baseStyles

@@ -18,7 +18,7 @@ const userData = reactive({
       class="mb-4"
       label="E-mail"
       placeholder="email@gmail.com"
-      type="textarea"
+      type="email"
       v-model="userData.email"
     />
     <IIinput label="Пароль" placeholder="**********" type="password" v-model="userData.password" />

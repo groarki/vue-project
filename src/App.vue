@@ -1,6 +1,6 @@
 <script setup>
 import FavouritePlaces from './components/FavouritePlaces/FavouritePlaces.vue'
-import IModal from './components/IModal/IModal.vue'
+import CreatePlace from './components/IModal/CreatePlace.vue'
 import HomePage from './views/HomePage.vue'
 import { ref } from 'vue'
 
@@ -17,7 +17,7 @@ const closeModal = () => {
 
 <template>
   <button @click="openModal">Open modal</button>
-  <IModal v-if="isOpen" @close="closeModal" />
+  <CreatePlace :is-open="isOpen" @close="closeModal" @submit="console.log" />
   <HomePage />
   <FavouritePlaces />
 </template>
