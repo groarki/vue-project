@@ -6,11 +6,11 @@ import RouteComponent from '@/components/RouteComponent/RouteComponent.vue'
 </script>
 
 <template>
-  <main class="bg-white flex justify-center items-center h-screen">
+  <div class="bg-white flex justify-center items-center h-screen">
     <RouteComponent>
       <!-- <GreetingComponent /> -->
       <!-- <RegistrationForm @submit="console.log" /> -->
       <LoginForm @submit="console.log" />
     </RouteComponent>
-  </main>
+  </div>
 </template>
