@@ -1,6 +1,6 @@
 <script setup>
 import { MapboxMap, MapboxMarker } from '@studiometa/vue-mapbox-gl'
-import { mapSettings } from '../../src/map/settings.js'
+import { mapSettings } from '../map/settings.js'
 import { ref } from 'vue'
 import FavouritePlaces from '../../src/components/FavouritePlaces/FavouritePlaces.vue'
 import MapIcon from '../../src/components/icons/MapIcon.vue'
