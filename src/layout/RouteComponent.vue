@@ -9,7 +9,7 @@
     </section>
     <section class="flex-1 relative">
       <div class="absolute inset-0 bg-black/5"></div>
-      <img class="h-full w-full object-cover" src="../../assets/img/static-map.png" alt="" />
+      <img class="h-full w-full object-cover" src="../assets/img/static-map.png" alt="" />
     </section>
   </div>
 </template>
