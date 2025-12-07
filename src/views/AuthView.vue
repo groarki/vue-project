@@ -4,7 +4,7 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <div class="bg-white flex justify-center items-center h-screen">
+  <div>
     <RouteComponent>
       <router-view></router-view>
     </RouteComponent>
