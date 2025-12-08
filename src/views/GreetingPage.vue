@@ -4,7 +4,7 @@ import RouteComponent from '@/layout/RouteComponent.vue'
 </script>
 
 <template>
-  <div>
+  <div class="flex justify-center items-center">
     <RouteComponent>
       <GreetingComponent />
     </RouteComponent>

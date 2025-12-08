@@ -37,8 +37,8 @@ const changePlace = (id) => {
 </script>
 
 <template>
-  <main class="flex h-screen">
-    <div class="bg-white h-full w-[400px] shrink-0 overflow-auto pb-10">
+  <main class="flex h-screen flex-1">
+    <div class="bg-white h-full w-full shrink-3 overflow-auto">
       <FavouritePlaces
         :items="favouritePlaces"
         :active-id="activeId"

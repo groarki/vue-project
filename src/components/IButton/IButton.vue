@@ -8,6 +8,10 @@ const props = defineProps({
     type: String,
   },
   to: String,
+  isLoading: {
+    default: false,
+    type: Boolean,
+  },
 })
 
 const bgStyles = computed(() => {
@@ -30,6 +34,9 @@ const link = computed(() => (isLink.value ? props.to : undefined))
     class="transition delay-150 duration-150 ease-out hover:shadow-xl hover:scale-95 rounded-lg py-3 px-7 text-white cursor-pointer text-xs font-bold"
     :to="link"
   >
-    <slot></slot>
+    <template v-if="props.isLoading"> Loading... </template>
+    <template v-else>
+      <slot></slot>
+    </template>
   </component>
 </template>
