@@ -1,26 +1,22 @@
 <script setup lang="ts">
-import { login } from '@/api/user'
+import { authService } from '@/api/authService'
 import LoginForm from '@/components/Auth/LoginForm/LoginForm.vue'
-import { ref } from 'vue'
+import { useMutation } from '@/composables/useMutation'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
 
-const isLoading = ref(false)
-
-const handleLoginUser = async (userData) => {
-  try {
-    isLoading.value = true
-    await login(userData)
-    router.replace('/map')
-  } catch (error) {
-    console.log(error.message)
-  } finally {
-    isLoading.value = false
-  }
-}
+const {
+  isLoading,
+  error,
+  mutation: handleLogin,
+} = useMutation({
+  mutationFn: (data) => authService.login(data),
+  onSuccess: () => router.replace('/map'),
+  onError: () => console.error(error),
+})
 </script>
 
 <template>
-  <LoginForm @submit="handleLoginUser" :is-loading="isLoading" />
+  <LoginForm @submit="handleLogin" :is-loading="isLoading" />
 </template>

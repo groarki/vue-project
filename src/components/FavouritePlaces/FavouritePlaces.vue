@@ -18,7 +18,10 @@ const emit = defineEmits(['place-clicked'])
 
 <template>
   <div class="flex flex-col px-6 py-11 w-[379px]">
-    <p class="text-gray mb-[18px]">Додані маркери</p>
+    <h2 v-if="items.length === 0" class="text-primary text-center p">
+      Список улюблених місць порожній
+    </h2>
+    <p v-else class="text-gray mb-[18px]">Додані маркери</p>
     <div class="flex flex-col gap-6 mb-11">
       <MarkerComponent
         :key="place.id"
