@@ -1,6 +1,11 @@
 <script setup>
+import { useModal } from '@/composables/useModal'
 import IButton from '../IButton/IButton.vue'
 import MarkerComponent from '../MarkerComponent/MarkerComponent.vue'
+import EditPlaceModal from '../EditPlaceModal/EditPlaceModal.vue'
+import { computed, ref } from 'vue'
+import { useMutation } from '@/composables/useMutation'
+import { updateFavouritePlaces } from '@/api/places'
 
 const props = defineProps({
   items: {
@@ -9,11 +14,32 @@ const props = defineProps({
   },
   activeId: {
     required: true,
-    type: [Number, null],
+    type: [String, null],
   },
 })
 
-const emit = defineEmits(['place-clicked'])
+const emit = defineEmits(['place-clicked', 'create', 'updated'])
+
+const { isOpen, openModal, closeModal } = useModal()
+
+const selectedId = ref(null)
+
+const selectedItem = computed(() => props.items.find((place) => place.id === selectedId.value))
+const handleEditPlace = (id) => {
+  selectedId.value = id
+  openModal()
+}
+
+const { mutation: updatePlace, isLoading } = useMutation({
+  mutationFn: (formData) => updateFavouritePlaces(formData),
+  onSuccess: () => {
+    closeModal()
+    emit('updated')
+  },
+})
+const handleSubmit = (formData) => {
+  updatePlace(formData)
+}
 </script>
 
 <template>
@@ -31,8 +57,16 @@ const emit = defineEmits(['place-clicked'])
         :img="place.img"
         :isActive="place.id === props.activeId"
         @click="emit('place-clicked', place.id)"
+        @edit="handleEditPlace(place.id)"
+      />
+      <EditPlaceModal
+        :is-open="isOpen"
+        @close="closeModal"
+        :place="selectedItem"
+        @submit="handleSubmit"
+        :is-loading="isLoading"
       />
     </div>
-    <IButton variant="gradient"> Додати маркер </IButton>
+    <IButton variant="gradient" @click="emit('create')"> Додати маркер </IButton>
   </div>
 </template>
