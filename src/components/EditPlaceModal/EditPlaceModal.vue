@@ -4,7 +4,7 @@ import MapIcon from '../icons/MapIcon.vue'
 import IInput from '../IInput/IInput.vue'
 import InputImage from '../IInput/InputImage.vue'
 import IModal from '../IModal/IModal.vue'
-import placeImage from '../../assets/img/photo.png'
+import fallbackImage from '../../assets/img/fallback.png'
 import { ref, watch } from 'vue'
 
 const props = defineProps({
@@ -54,7 +54,7 @@ const handleChangeImg = (url) => {
           <div class="w-5/12">
             <img
               class="w-full h-[276px] object-cover rounded-md"
-              :src="formData.img || placeImage"
+              :src="formData.img || fallbackImage"
               alt="place img"
             />
           </div>

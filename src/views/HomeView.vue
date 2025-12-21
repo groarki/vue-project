@@ -44,7 +44,11 @@ const handleAddPlace = async (formData, resetForm) => {
   resetForm()
 }
 
-const { data, mutation: getPlaces } = useMutation({
+const {
+  data,
+  mutation: getPlaces,
+  isLoading: isPlacesLoading,
+} = useMutation({
   mutationFn: () => getFavouritePlaces(),
 })
 const changePlace = (id) => {
@@ -74,6 +78,7 @@ onMounted(() => {
         @place-clicked="changePlace"
         @create="openModal"
         @updated="getPlaces"
+        :is-places-loading="isPlacesLoading"
       />
       <CreatePlace
         :is-open="isOpen"
@@ -97,7 +102,7 @@ onMounted(() => {
           <MapIcon class="h-8 w-8" />
         </MapboxMarker>
         <MapboxMarker v-for="place in favouritePlaces" :key="place.id" :lngLat="place.coordinates">
-          <button @click.stop="changeActiveId(place.id)">
+          <button @click.stop="changeActiveId(place.id)" class="cursor-pointer">
             <MapIcon class="w-8 h-8" />
           </button>
         </MapboxMarker>

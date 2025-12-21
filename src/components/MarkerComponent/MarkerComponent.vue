@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import DeleteButton from './DeleteButton.vue'
 import EditButton from './EditButton.vue'
-import placeImage from '../../assets/img/photo.png'
+import fallbackImage from '../../assets/img/fallback.png'
 
 const props = defineProps({
   title: {
@@ -25,7 +25,7 @@ const emit = defineEmits(['edit', 'delete'])
 <template>
   <div>
     <div class="w-[331px] flex flex-row gap-3.5">
-      <img class="size-20 rounded-sm shrink-0 object-cover" :src="props.img || placeImage" />
+      <img class="size-20 rounded-sm shrink-0 object-cover" :src="props.img || fallbackImage" />
       <div class="flex flex-col gap-2 w-full">
         <div class="flex flex-row justify-between items-center">
           <p class="text-sm text-black font-medium font-['Inter'] leading-5">{{ props.title }}</p>
