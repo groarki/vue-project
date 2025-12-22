@@ -99,7 +99,7 @@ onMounted(() => {
         @mb-created="(mapInstance) => (map = mapInstance)"
       >
         <MapboxMarker v-if="mapMarker" :lngLat="mapMarker" anchor="bottom">
-          <MapIcon class="h-8 w-8" />
+          <MapIcon class="h-8 w-8" is-active />
         </MapboxMarker>
         <MapboxMarker v-for="place in favouritePlaces" :key="place.id" :lngLat="place.coordinates">
           <button @click.stop="changeActiveId(place.id)" class="cursor-pointer">

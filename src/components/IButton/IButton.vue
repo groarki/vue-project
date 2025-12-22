@@ -18,6 +18,14 @@ const bgStyles = computed(() => {
   return props.variant === 'gradient' ? 'bg-linear-to-r from-peach to-primary' : 'bg-[#FFA279]'
 })
 
+const textStyles = computed(() => {
+  switch (props.variant) {
+    case 'border':
+      return 'text-primary'
+    default:
+      return 'text-white'
+  }
+})
 const isLink = computed(() => !!props.to)
 
 const componentName = computed(() => {
@@ -30,8 +38,8 @@ const link = computed(() => (isLink.value ? props.to : undefined))
 <template>
   <component
     :is="componentName"
-    :class="bgStyles"
-    class="transition delay-150 duration-150 ease-out hover:shadow-xl hover:scale-95 rounded-lg py-3 px-7 text-white cursor-pointer text-xs font-bold"
+    :class="[bgStyles, textStyles]"
+    class="transition delay-150 duration-150 ease-out hover:shadow-xl hover:scale-95 rounded-lg py-3 px-7 cursor-pointer text-xs font-bold"
     :to="link"
   >
     <template v-if="props.isLoading"> Loading... </template>

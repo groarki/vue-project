@@ -28,7 +28,7 @@ const emit = defineEmits(['edit', 'delete'])
       <img class="size-20 rounded-sm shrink-0 object-cover" :src="props.img || fallbackImage" />
       <div class="flex flex-col gap-2 w-full">
         <div class="flex flex-row justify-between items-center">
-          <p class="text-sm text-black font-medium font-['Inter'] leading-5">{{ props.title }}</p>
+          <p class="text-sm text-black font-medium leading-5">{{ props.title }}</p>
           <div class="flex flex-row gap-2">
             <EditButton @click="emit('edit')" />
             <DeleteButton @click="emit('delete')" />
