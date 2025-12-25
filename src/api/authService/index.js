@@ -4,7 +4,7 @@ import { clientFetch } from '../clientFetch'
 class AuthService {
   #token = null
   isLoggedIn() {
-    return Boolean(this.#token)
+    return Boolean(localStorage.getItem('token'))
   }
 
   getToken() {
@@ -71,7 +71,7 @@ clientFetch.interceptors.response.use(
       try {
         return await authService.refresh()
       } catch (e) {
-        router.push('/auth/login')
+        router.push('/user/login')
         return Promise.reject(e)
       }
     }

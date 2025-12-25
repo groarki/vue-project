@@ -78,7 +78,7 @@ const { mutation: deletePlace, isLoading: isDeleting } = useMutation({
     <div v-if="isPlacesLoading" class="flex items-center justify-center">
       <h2 class="text-black text-sm">Loading...</h2>
     </div>
-    <div class="flex flex-col gap-6 mb-11">
+    <div class="flex flex-col gap-6 mb-10">
       <MarkerComponent
         :key="place.id"
         v-for="place in props.items"

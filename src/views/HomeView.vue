@@ -9,6 +9,8 @@ import { addFavouritePlaces, getFavouritePlaces } from '@/api/places/index.js'
 import { useModal } from '@/composables/useModal.js'
 import CreatePlace from '@/components/IModal/CreatePlace.vue'
 import { useMutation } from '@/composables/useMutation.js'
+import UserComponent from '@/components/FavouritePlaces/UserComponent.vue'
+import LogoutBtn from '@/components/FavouritePlaces/LogoutBtn.vue'
 
 const activeId = ref(null)
 const map = ref(null)
@@ -71,7 +73,8 @@ onMounted(() => {
 
 <template>
   <main class="flex h-screen flex-1">
-    <div class="bg-white h-full overflow">
+    <div class="bg-white h-full overflow relative">
+      <UserComponent />
       <FavouritePlaces
         :items="favouritePlaces"
         :active-id="activeId"
@@ -87,6 +90,7 @@ onMounted(() => {
         :has-error="error"
         :is-loading="isLoading"
       />
+      <LogoutBtn class="mt-20" />
     </div>
     <div class="w-full h-full flex items-center justify-center text-6xl">
       <MapboxMap
