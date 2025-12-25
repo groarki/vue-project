@@ -1,6 +1,6 @@
 # IT Travels
 
-**IT Travels** is a learning project created during the **Vue.js** course at **GoIT**
+**IT Travels** is a study project created during the **Vue.js** course at **GoIT**
 
 The project follows the design [mockup](https://www.figma.com/design/iKGFonhDEQiTWjSf4pa3P6/IT-traveler?node-id=0-1&p=f&t=4McNTyIpR9PLr9Pb-0)
 
