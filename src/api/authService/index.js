@@ -24,7 +24,6 @@ class AuthService {
   async login(body) {
     const res = await clientFetch.post('/user/login', body)
     const { accessToken } = res.data
-    console.log(accessToken)
     this.setToken(accessToken)
   }
 
@@ -71,7 +70,7 @@ clientFetch.interceptors.response.use(
       try {
         return await authService.refresh()
       } catch (e) {
-        router.push('/user/login')
+        router.push('/auth/login')
         return Promise.reject(e)
       }
     }

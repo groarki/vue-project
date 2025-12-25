@@ -11,9 +11,9 @@ const routes = [
   { path: '/', component: GreetingPage, name: 'greeting' },
   { path: '/map', component: HomePage, name: 'homepage' },
   {
-    path: '/user',
+    path: '/auth',
     component: AuthPage,
-    redirect: '/user/registration',
+    redirect: '/auth/registration',
     children: [
       { path: 'login', component: LoginPage, name: 'login' },
       { path: 'registration', component: RegistrationPage, name: 'registration' },
@@ -28,11 +28,13 @@ export const router = createRouter({
 
 router.beforeEach((to, from, next) => {
   const authRoutes = ['login', 'registration']
+  const publicRoutes = ['greeting']
   const { name } = to
-  if (authRoutes.includes(name) && authService.isLoggedIn()) {
+  const isLoggedIn = authService.isLoggedIn()
+
+  if (authRoutes.includes(name) && isLoggedIn) {
     next({ name: 'homepage' })
-  } else if (!authRoutes.includes(name) && !authService.isLoggedIn()) {
-    console.log('redirecting unlogged user')
+  } else if (!isLoggedIn && !authRoutes.includes(name) && !publicRoutes.includes(name)) {
     next({ name: 'login' })
   } else {
     next()
