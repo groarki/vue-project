@@ -20,12 +20,17 @@ import IButton from '@/components/IButton/IButton.vue'
         У вас ще немає аккаунту?
       </p>
       <div class="justify-center text-white/80 text-xs font-normal leading-5">
-        <span class="cursor-pointer text-white text-xs font-normal underline leading-5"
-          >Зареєструватися</span
-        >
+        <a
+          href="/auth/registration"
+          class="cursor-pointer text-white text-xs font-normal underline leading-5"
+          >Зареєструватися
+        </a>
         або
-        <span class="text-white cursor-pointer text-xs font-normal underline leading-5">
-          увійти</span
+        <a
+          href="/auth/login"
+          class="text-white cursor-pointer text-xs font-normal underline leading-5"
+        >
+          увійти</a
         >
       </div>
     </div>
