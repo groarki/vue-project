@@ -10,7 +10,6 @@ const token = localStorage.getItem('token')
 if (token) {
   authService.setToken(token)
 }
-console.log(token, '2')
 const app = createApp(App)
 
 app.use(createPinia())

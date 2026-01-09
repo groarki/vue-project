@@ -37,6 +37,15 @@ git clone git@github.com:groarki/vue-project.git
 ```bash
 npm install
 ```
+3. Add your API Token for [MapBox API](https://www.mapbox.com)
+
+ * Register/Login to get personal access token.
+* You can find the name of the token in the .env.example file. 
+* Create an .env file in the root directory and paste your accessToken from your account 
+
+```bash
+VITE_MAP_TOKEN=[your_access_token]
+```
 
 3. Run the project
 

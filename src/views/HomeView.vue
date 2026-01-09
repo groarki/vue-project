@@ -55,8 +55,6 @@ const {
 })
 const changePlace = (id) => {
   const { coordinates } = favouritePlaces.value.find((place) => place.id === id)
-  console.log('coord', coordinates)
-  console.log('id', id)
   changeActiveId(id)
 
   map.value.flyTo({ center: coordinates, zoom: 14 })
